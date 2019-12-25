@@ -6,7 +6,7 @@ import Meta from '../Meta';
 
 const StyledHeader = styled.header`
   align-items: center;
-  background-color: #ff6666;
+  background: linear-gradient(315deg, #56ccf2 0, #3a95ee 73%, #2f80ed 100%);
   border-color: white;
   display: flex;
   height: 64px;
