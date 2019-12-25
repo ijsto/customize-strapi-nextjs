@@ -20,7 +20,7 @@ const StyledCard = styled.div`
   }
 `;
 
-export const Card = ({ children, image, title, width }) => {
+const Card = ({ children, image, title, width }) => {
   return (
     <StyledCard width={width}>
       {image && <img src={image} alt={title} />}

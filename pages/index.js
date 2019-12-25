@@ -1,4 +1,6 @@
 import Jumbo from '../components/dataDisplay/Jumbo';
+import QuerySample from '../components/QuerySample';
+import MutationSample from '../components/MutationSample';
 
 export default () => {
   return (
@@ -7,6 +9,8 @@ export default () => {
         <h1>Next.js with GraphQL Apollo Client</h1>
       </Jumbo>
 
+      <QuerySample />
+      <MutationSample />
       <a
         href="https://ijs.to/courses/"
         rel="noopener noreferrer"
