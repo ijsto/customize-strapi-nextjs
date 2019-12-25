@@ -1,5 +1,8 @@
 import App from 'next/app';
 import { createGlobalStyle } from 'styled-components';
+import { ApolloProvider } from '@apollo/react-hooks';
+
+import withData from '../lib/apollo';
 
 import DefaultLayout from '../layouts/DefaultLayout';
 
@@ -120,16 +123,18 @@ class AppWrapper extends App {
   }
 
   render() {
-    const { Component, pageProps } = this.props;
+    const { apollo, Component, pageProps } = this.props;
     const Layout = Component.Layout || DefaultLayout;
 
     return (
-      <Layout>
-        <Component {...pageProps} />
-        <GlobalStyle />
-      </Layout>
+      <ApolloProvider client={apollo}>
+        <Layout>
+          <Component {...pageProps} />
+          <GlobalStyle />
+        </Layout>
+      </ApolloProvider>
     );
   }
 }
 
-export default AppWrapper;
+export default withData(AppWrapper);
