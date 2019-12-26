@@ -1,15 +1,8 @@
 import gql from 'graphql-tag';
 
 const FIRST_MT = gql`
-  mutation {
-    createPost(
-      input: {
-        data: {
-          title: "First Post"
-          body: "This is the body of the first post"
-        }
-      }
-    ) {
+  mutation($title: String!, $body: String!) {
+    createPost(input: { data: { title: $title, body: $body } }) {
       post {
         id
         title
