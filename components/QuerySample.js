@@ -17,6 +17,7 @@ const QuerySample = () => {
         {posts.map(p => (
           <Card key={p.id}>
             <h3>{p.title}</h3>
+            <b>{p.slug ? p.slug : 'No slug'}</b>
             <div>{p.body}</div>
           </Card>
         ))}

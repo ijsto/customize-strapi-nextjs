@@ -4,8 +4,9 @@ const FIRST_QY = gql`
   query FirstQuery {
     posts {
       id
-      title
       body
+      slug
+      title
     }
   }
 `;

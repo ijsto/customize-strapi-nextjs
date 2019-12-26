@@ -4,7 +4,7 @@ import FIRST_QY from '../api/queries/FIRST_QY';
 
 const MutationSample = () => {
   const [createPost, { loading, error }] = useMutation(FIRST_MT, {
-    variables: { title: 'Title from variables', body: 'Body from variables' },
+    variables: { title: 'Title from variables2', body: 'Body from variables' },
     refetchQueries: [{ query: FIRST_QY }]
   });
 
