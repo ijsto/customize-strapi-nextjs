@@ -1,15 +1,15 @@
 {
-  "name": "istrapi-nextjs",
+  "name": "strapi-conf-nextjs",
   "version": "1.0.0",
   "description": "Next.js boilerplate/starter project by iJS",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ijsto/istrapi-nextjs.git"
+    "url": "https://github.com/ijsto/strapi-conf-nextjs.git"
   },
   "homepage": "https://ijs.to",
   "bugs": {
-    "url": "https://github.com/ijsto/istrapi-nextjs/issues",
+    "url": "https://github.com/ijsto/strapi-conf-nextjs/issues",
     "email": "code@ijs.to"
   },
   "scripts": {
@@ -21,32 +21,16 @@
     "lib": "lib"
   },
   "dependencies": {
-    "@apollo/react-hooks": "^3.1.3",
-    "apollo-cache-inmemory": "^1.6.5",
-    "apollo-client": "^2.6.8",
-    "apollo-link-http": "^1.5.16",
-    "graphql": "^14.5.8",
-    "graphql-tag": "^2.10.1",
-    "isomorphic-unfetch": "^3.0.0",
-    "next": "^9.3.2",
-    "next-with-apollo": "^4.3.0",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "styled-components": "^4.4.1"
-  },
-  "devDependencies": {
-    "babel-eslint": "^9.0.0",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-nextjs": "^1.0.2",
-    "eslint-config-prettier": "^4.3.0",
-    "eslint-plugin-html": "^5.0.5",
-    "eslint-plugin-import": "^2.19.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.17.0",
-    "eslint-plugin-react-hooks": "^1.7.0",
-    "prettier": "^1.19.1"
+    "@apollo/client": "^3.3.12",
+    "@apollo/react-hooks": "^4.0.0",
+    "apollo-cache-inmemory": "^1.6.6",
+    "graphql": "^15.5.0",
+    "isomorphic-unfetch": "^3.1.0",
+    "next": "^10.0.9",
+    "next-with-apollo": "^5.1.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1"
   },
   "keywords": [
     "nextjs",
@@ -56,5 +40,20 @@
     "starter project"
   ],
   "author": "Scott Agirs Neminskis - iJS.to",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@ijsto/eslint-config": "^3.0.1",
+    "babel-eslint": "^9.0.0",
+    "babel-plugin-styled-components": "^1.12.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-html": "^5.0.3",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-react-hooks": "^1.4.0",
+    "prettier": "^1.16.4"
+  }
 }
