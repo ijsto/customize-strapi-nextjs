@@ -1,61 +1,48 @@
-import Jumbo from '../components/dataDisplay/Jumbo';
-import QuerySample from '../components/QuerySample';
-import MutationSample from '../components/MutationSample';
+import { useQuery } from '@apollo/react-hooks';
+import { useEffect, useState } from 'react';
 
-export default () => {
+import FIRST_QY from '../api/queries/FIRST_QY';
+import Authentication from '../components/dataEntry/Authentication';
+
+import TripList from '../components/TripList';
+import MrDonaldDuck from '../components/MrDonaldDuck';
+import CreateTripForm from '../components/CreateTripForm';
+
+const App = () => {
+  const [token, setToken] = useState(null);
+
+  const { data, loading, error } = useQuery(FIRST_QY, {
+    onError(err) {
+      // eslint-disable-next-line no-console
+      console.log('onError :: err', err);
+    },
+  });
+
+  useEffect(() => {
+    setToken(localStorage.getItem('jwt'));
+  }, []);
+
+  if (error) return <p>Error: {JSON.stringify(error)}</p>;
+  const trips = data?.trips ?? [];
+
   return (
-    <div style={{ maxWidth: '90%', margin: '0 auto' }}>
-      <Jumbo>
-        <h1>Next.js with GraphQL Apollo Client</h1>
-      </Jumbo>
+    <>
+      <div style={{ margin: '0 auto', maxWidth: 600 }}>
+        {!loading && <MrDonaldDuck trips={trips} />}
 
-      <QuerySample />
-      <MutationSample />
-      <a
-        href="https://ijs.to/courses/"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <h2>Learn code on iJS.to</h2>
-      </a>
-      <ul>
-        <li>
-          <a
-            href="https://ijs.to/courses/nextjs"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Next.js
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://ijs.to/courses/react"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            React
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://ijs.to/courses/graphql"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            GraphQL
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://ijs.to/courses/"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            and other courses
-          </a>
-        </li>
-      </ul>
-    </div>
+        <h1 style={{ textAlign: 'center' }}>Donald, get crisps!</h1>
+
+        {!token && <Authentication />}
+
+        <CreateTripForm />
+
+        {trips?.length > 0 && (
+          <h2 style={{ textAlign: 'center' }}>Existing Trips</h2>
+        )}
+        <TripList trips={trips} />
+      </div>
+    </>
   );
 };
+
+export default App;
