@@ -1,9 +1,16 @@
 const MrDonaldDuck = ({ trips }) => {
   const isLastOne = trips[0]?.slug?.includes('last-one');
+  const hasTrips = trips?.length;
 
   return (
     <div
-      style={{ position: 'fixed', right: 256, textAlign: 'right', top: 128 }}
+      style={{
+        position: 'fixed',
+        right: hasTrips ? 256 : 'calc(50% - 155px)',
+        textAlign: hasTrips ? 'right' : 'center',
+        top: hasTrips ? 128 : 'calc(50% - 77px)',
+        transition: 'all 0.15s',
+      }}
     >
       {(!trips?.length || trips?.length <= 3) && (
         <div>
