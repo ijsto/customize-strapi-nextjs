@@ -3,42 +3,46 @@ export const About = () => {
     <div>
       <h1>Strapi with Next.js</h1>
       <p>
-        Next.js is a framework that makes it easy to create Universal web apps
-        in React.
+        <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer">
+          Next.js
+        </a>{' '}
+        is a framework that makes it easy to create Universal web apps in React.
       </p>
       <p>
-        Strapi is an open source Headless CMS that enables you to quickly ship
-        REST and/or GraphQL api services.
+        <a href="https://strapi.io/" target="_blank" rel="noopener noreferrer">
+          Strapi
+        </a>{' '}
+        - you already know... Hopefully, heh.
       </p>
       <p>
-        This is a Next.js starter project pre-configured to work with
-        Styled-Components, Strapi GraphQL and includes custom layout setup.
+        This is a Next.js starter project for the Strapi Conf 2021 lightning
+        talk where Mr Donald Duck goes to Scranton to get crisps.
       </p>
       <h2>Get Started (3 minutes)</h2>
       <ul>
         <li>
           1. Clone the the{' '}
-          <a href="https://github.com/ijsto/istrapi-nextjs">starter repo</a>
+          <a href="https://github.com/ijsto/strapi-conf-nextjs">starter repo</a>
           <p>
-            <code>git clone git@github.com:ijsto/istrapi-nextjs.git</code>
+            <code>git clone git@github.com:ijsto/strapi-conf-nextjs.git</code>
           </p>
         </li>
         <li>
           2. Enter the directory
           <p>
-            <code>cd istrapi-nextjs</code>
+            <code>cd strapi-conf-nextjs</code>
           </p>
         </li>
         <li>
           3. Install project dependencies
           <p>
-            <code>npm install</code> or <code>npm i</code>
+            <code>yarn</code> or <code>npm i</code> or <code>npm install</code>
           </p>
         </li>
         <li>
           To run the project locally:
           <p>
-            <code>npm run dev</code>
+            <code>yarn dev</code> or <code>npm run dev</code>
           </p>
         </li>
         <li>
@@ -48,6 +52,16 @@ export const About = () => {
       </ul>
 
       <h2>The starter is now ready - have fun!</h2>
+      <p>
+        For video tutorials visit{' '}
+        <a
+          href="https://ijs.to/classroom"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          ijs.to/classroom
+        </a>
+      </p>
     </div>
   );
 };

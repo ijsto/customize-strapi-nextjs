@@ -1,12 +1,22 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 
 const FIRST_MT = gql`
-  mutation($title: String!, $body: String!) {
-    createPost(input: { data: { title: $title, body: $body } }) {
-      post {
+  mutation FIRST_MT(
+    $title: String!
+    $destination: String!
+    $isTravellerCovidFree: Boolean!
+  ) {
+    createTrip(
+      input: {
+        data: {
+          title: $title
+          destination: $destination
+          isTravellerCovidFree: $isTravellerCovidFree
+        }
+      }
+    ) {
+      trip {
         id
-        title
-        body
       }
     }
   }

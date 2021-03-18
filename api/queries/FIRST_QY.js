@@ -1,10 +1,14 @@
-import gql from 'graphql-tag';
+import { gql } from '@apollo/client';
 
 const FIRST_QY = gql`
-  query FirstQuery {
-    posts {
+  query FIRST_QY {
+    trips(sort: "created_at:DESC") {
       id
-      body
+      traveller {
+        id
+        email
+      }
+      isTravellerCovidFree
       slug
       title
     }

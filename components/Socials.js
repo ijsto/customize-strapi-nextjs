@@ -10,7 +10,7 @@ const StyledSocials = styled.footer`
   a:hover {
     border-radius: 0;
     border: 1px solid transparent;
-    border-bottom: 1px solid orange;
+    border-bottom: 1px solid #f4c069;
   }
 
   .icon {
