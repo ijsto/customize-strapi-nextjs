@@ -1,5 +1,19 @@
 import styled from 'styled-components';
 
+const StyledLogo = styled.div`
+  svg {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    padding: 0;
+    position: absolute;
+    top: 1em;
+    left: 4em;
+    width: 64px;
+    rect {
+      fill: #f9dd77;
+    }
+  }
+`;
+
 const StyledLogoContainer = styled.div`
   position: relative;
   .travels {
@@ -15,24 +29,7 @@ const StyledLogoContainer = styled.div`
     text-transform: none;
   }
   &:hover {
-    .travels {
-      transform: rotate(-10deg);
-    }
-  }
-`;
-
-const StyledLogo = styled.div`
-  svg {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    padding: 0;
-    position: absolute;
-    top: 1em;
-    left: 4em;
-    width: 64px;
-    rect {
-      fill: #f9dd77;
-    }
-    &:hover {
+    ${StyledLogo} {
       color: #333644;
       .JS,
       rect {
@@ -43,6 +40,9 @@ const StyledLogo = styled.div`
       rect {
         fill: #333644;
       }
+    }
+    .travels {
+      transform: rotate(-10deg);
     }
   }
 `;
