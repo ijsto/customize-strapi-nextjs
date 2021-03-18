@@ -1,3 +1,4 @@
+import { GoogleFonts } from 'next-google-fonts';
 import Link from 'next/link';
 
 import styled from 'styled-components';
@@ -38,6 +39,8 @@ const StyledHeader = styled.header`
 const Header = () => {
   return (
     <StyledHeader>
+      <GoogleFonts href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" />
+
       <Meta />
       <Link href="/">
         <a className="logo">
