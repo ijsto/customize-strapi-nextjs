@@ -1,0 +1,35 @@
+{
+  "workbench.colorCustomizations": {
+    "titleBar.activeForeground": "#000",
+    "titleBar.inactiveForeground": "#000000CC",
+    "titleBar.activeBackground": "#ed6292",
+    "titleBar.inactiveBackground": "#b18a98",
+    "activityBar.foreground": "#ed6292",
+    "activityBar.background": "#333644",
+    "activityBar.inactiveForeground": "#38B8F0",
+    "activityBarBadge.foreground": "#ffffff",
+    "activityBarBadge.background": "#B838F0",
+    "statusBar.foreground": "#262626",
+    "statusBar.background": "#38B8F0",
+    "statusBarItem.remoteBackground": "#B838F0"
+  },
+  "editor.formatOnSave": true,
+  // Disable default formatting (ESLint formatting will be used instead)
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  },
+  // Auto-fix issues with ESLint when you save code changes
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  // Prevent double-formatting and potential ESLint <> Prettier conflicts (ESLint formatting will be used instead)
+  "prettier.disableLanguages": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ]
+}

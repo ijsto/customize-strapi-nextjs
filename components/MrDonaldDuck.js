@@ -1,5 +1,5 @@
 const MrDonaldDuck = ({ trips }) => {
-  const isLastOne = trips[0]?.slug?.includes('last-one');
+  const isLastOne = trips[0]?.title?.includes('last-one');
   const hasTrips = trips?.length;
 
   return (
