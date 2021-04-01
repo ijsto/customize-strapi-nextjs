@@ -4,10 +4,8 @@ const TripList = ({ trips }) => {
   return trips?.map(trip => (
     <Card key={trip.id}>
       <h3>{trip.title}</h3>
-      <b>{trip.slug || 'No slug'}</b>
-      <div>
-        <i>{trip.traveller?.email || 'Unknown traveller'}</i>
-      </div>
+      <b>{trip.traveller?.username || 'Unknown traveller'}</b>
+
       <div>{trip.body}</div>
     </Card>
   ));

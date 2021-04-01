@@ -26,7 +26,7 @@ const CreateTripForm = () => {
 
   const handleCreateTrip = async e => {
     e.preventDefault();
-    await createTrip({
+    const payload = await createTrip({
       refetchQueries: [{ query: FIRST_QY }],
       variables: {
         destination: `Scranton, PA`,
@@ -34,8 +34,11 @@ const CreateTripForm = () => {
         title: tripTitle,
       },
     });
-    resetTripTitle();
-    resetCovidCheck(false);
+
+    if (payload?.data?.createTrip?.trip?.id) {
+      resetTripTitle();
+      resetCovidCheck(false);
+    }
   };
   return (
     <>
@@ -51,9 +54,8 @@ const CreateTripForm = () => {
             Create Trip
           </Button>
         </div>
-        <div>
-          <Checkbox label="Covid test was negative" {...bindCovidCheck} />
-        </div>
+
+        <Checkbox label="Covid test was negative" {...bindCovidCheck} />
       </form>
     </>
   );

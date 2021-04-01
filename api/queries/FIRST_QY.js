@@ -6,10 +6,10 @@ const FIRST_QY = gql`
       id
       traveller {
         id
+        username
         email
       }
       isTravellerCovidFree
-      slug
       title
     }
   }

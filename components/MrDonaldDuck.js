@@ -1,18 +1,18 @@
 const MrDonaldDuck = ({ trips }) => {
-  const isLastOne = trips[0]?.title?.includes('last-one');
+  const isLastOne = trips[0]?.title?.includes('last trip');
   const hasTrips = trips?.length;
 
   return (
     <div
       style={{
         position: 'fixed',
-        right: hasTrips ? 256 : 'calc(50% - 155px)',
+        right: hasTrips ? 222 : 'calc(50% - 155px)',
         textAlign: hasTrips ? 'right' : 'center',
         top: hasTrips ? 128 : 'calc(50% - 77px)',
         transition: 'all 0.15s',
       }}
     >
-      {(!trips?.length || trips?.length <= 3) && (
+      {(!trips?.length || trips?.length < 2) && (
         <div>
           <img
             alt="Donald is ready for a trip."
@@ -23,18 +23,18 @@ const MrDonaldDuck = ({ trips }) => {
         </div>
       )}
 
-      {trips?.length > 3 && trips?.length <= 5 && (
+      {trips?.length >= 2 && trips?.length < 3 && (
         <div>
           <img
             alt="Donald is a bit tired and grumpy."
             src="/img/upset-donald.png"
             height="200px"
           />
-          <p>That's a lot of walking, man!</p>
+          <p>That was a lot of walking, man!</p>
         </div>
       )}
 
-      {!isLastOne && trips?.length > 5 && (
+      {!isLastOne && trips?.length >= 3 && (
         <div>
           <img
             alt="Donald is bouncing around in outrage."
