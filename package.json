@@ -1,7 +1,7 @@
 {
-  "name": "strapi-conf-nextjs",
+  "name": "customize-strapi-nextjs",
   "version": "1.0.0",
-  "description": "Next.js boilerplate/starter project by iJS",
+  "description": "Customize Strapi App Course project Client app.",
   "main": "index.js",
   "repository": {
     "type": "git",
