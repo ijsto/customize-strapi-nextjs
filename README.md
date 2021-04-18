@@ -1,3 +1,3 @@
-<h1 align="center">Donald gets crisps Next.js</h1>
+# Customize Strapi Next.js
 
-<!-- @TODO: -->
+Source code for [Customizing Strapi course](https://ijs.to/c/customizing-strapi) Next.js client app.
