@@ -1,3 +1,4 @@
+import { forwardRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const StyledCheckbox = styled.div`
@@ -64,16 +65,34 @@ const StyledCheckbox = styled.div`
   }
 `;
 
-const Checkbox = ({ label, ...rest }) => {
-  return (
-    <StyledCheckbox>
-      <label className="container">
-        <span>{label}</span>
-        <input type="checkbox" {...rest} />
-        <span className="checkmark" />
-      </label>
-    </StyledCheckbox>
-  );
-};
+const Checkbox = forwardRef(
+  ({ label, name, value, onChange, defaultChecked, ...rest }, forwardedRef) => {
+    const [checked, setChecked] = useState(defaultChecked);
+
+    useEffect(() => {
+      if (onChange) {
+        onChange(checked);
+      }
+    }, [checked, onChange]);
+
+    return (
+      <StyledCheckbox>
+        <label className="container">
+          <span>{label}</span>
+          <input
+            {...rest}
+            name={name}
+            onChange={e => {
+              setChecked(e.target.checked);
+            }}
+            ref={forwardedRef}
+            type="checkbox"
+          />
+          <span className="checkmark" />
+        </label>
+      </StyledCheckbox>
+    );
+  }
+);
 
 export default Checkbox;
