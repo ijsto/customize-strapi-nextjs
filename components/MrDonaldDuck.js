@@ -12,7 +12,7 @@ const MrDonaldDuck = ({ trips }) => {
         transition: 'all 0.15s',
       }}
     >
-      {(!trips?.length || trips?.length < 2) && (
+      {(!trips?.length || trips?.length < 4) && (
         <div>
           <img
             alt="Donald is ready for a trip."
@@ -23,7 +23,7 @@ const MrDonaldDuck = ({ trips }) => {
         </div>
       )}
 
-      {trips?.length >= 2 && trips?.length < 3 && (
+      {trips?.length >= 4 && trips?.length < 6 && (
         <div>
           <img
             alt="Donald is a bit tired and grumpy."
@@ -34,7 +34,7 @@ const MrDonaldDuck = ({ trips }) => {
         </div>
       )}
 
-      {!isLastOne && trips?.length >= 3 && (
+      {!isLastOne && trips?.length >= 6 && (
         <div>
           <img
             alt="Donald is bouncing around in outrage."
