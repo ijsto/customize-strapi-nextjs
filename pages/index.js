@@ -2,7 +2,7 @@ import Cookies from 'js-cookie';
 import { useQuery } from '@apollo/react-hooks';
 import { useEffect, useState } from 'react';
 
-import FIRST_QY from '../api/queries/FIRST_QY';
+import TRIPS_Q from '../api/queries/TRIPS_Q';
 import Authentication from '../components/dataEntry/Authentication';
 
 import TripList from '../components/TripList';
@@ -12,7 +12,7 @@ import CreateTripForm from '../components/CreateTripForm';
 const App = () => {
   const [token, setToken] = useState(null);
 
-  const { data, loading, error } = useQuery(FIRST_QY, {
+  const { data, loading, error } = useQuery(TRIPS_Q, {
     onError(err) {
       // eslint-disable-next-line no-console
       console.log('onError :: err', err);
