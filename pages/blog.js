@@ -7,6 +7,7 @@ import POSTS_Q from '../api/queries/POSTS_Q';
 import Authentication from '../components/dataEntry/Authentication';
 import CreatePostForm from '../components/CreatePostForm';
 import PostList from '../components/PostList';
+import BloggerDonald from '../components/BloggerDonald';
 
 const BlogPage = () => {
   const [token, setToken] = useState(null);
@@ -37,6 +38,7 @@ const BlogPage = () => {
         <h2 style={{ textAlign: 'center' }}>Existing posts</h2>
       )}
       <PostList posts={posts} />
+      <BloggerDonald posts={posts} />
     </div>
   );
 };
