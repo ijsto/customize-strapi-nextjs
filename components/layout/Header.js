@@ -1,7 +1,7 @@
 import { GoogleFonts } from 'next-google-fonts';
 import Link from 'next/link';
-
 import styled from 'styled-components';
+
 import Logo from '../Logo';
 import Meta from '../Meta';
 
@@ -51,6 +51,11 @@ const Header = () => {
         <Link href="/">
           <a>Home</a>
         </Link>
+
+        <Link href="/blog">
+          <a>Blog</a>
+        </Link>
+
         <Link href="/about">
           <a>About</a>
         </Link>
