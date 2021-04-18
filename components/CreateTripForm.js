@@ -1,45 +1,30 @@
 import { useMutation } from '@apollo/react-hooks';
-import FIRST_MT from '../api/mutations/FIRST_MT';
-import FIRST_QY from '../api/queries/FIRST_QY';
+import { Controller, useForm } from 'react-hook-form';
+import CREATE_TRIP_M from '../api/mutations/CREATE_TRIP_M';
+import TRIPS_Q from '../api/queries/TRIPS_Q';
 import Button from './common/Button';
-import useInput from '../hooks/useInput';
 import Checkbox from './dataEntry/Checkbox';
 
 const CreateTripForm = () => {
-  const {
-    value: tripTitle,
-    bind: bindTripTitle,
-    reset: resetTripTitle,
-  } = useInput('');
-  const {
-    checked: covidCheck,
-    bind: bindCovidCheck,
-    reset: resetCovidCheck,
-  } = useInput(false);
-
-  const [createTrip, { error }] = useMutation(FIRST_MT, {
+  const { control, handleSubmit, register } = useForm();
+  const [createTrip, { error }] = useMutation(CREATE_TRIP_M, {
     onError(err) {
       // eslint-disable-next-line no-console
       console.log('onError :: err', err);
     },
   });
 
-  const handleCreateTrip = async e => {
-    e.preventDefault();
-    const payload = await createTrip({
-      refetchQueries: [{ query: FIRST_QY }],
+  const handleCreateTrip = async ({ isCovidFree, title }) => {
+    await createTrip({
+      refetchQueries: [{ query: TRIPS_Q }],
       variables: {
         destination: `Scranton, PA`,
-        isTravellerCovidFree: covidCheck || false,
-        title: tripTitle,
+        isCovidFree,
+        title,
       },
     });
-
-    if (payload?.data?.createTrip?.trip?.id) {
-      resetTripTitle();
-      resetCovidCheck(false);
-    }
   };
+
   return (
     <>
       {error && (
@@ -47,15 +32,22 @@ const CreateTripForm = () => {
           Uh-oh! {error.message}
         </h3>
       )}
-      <form onSubmit={handleCreateTrip}>
+      <form onSubmit={handleSubmit(handleCreateTrip)}>
         <div style={{ display: 'flex' }}>
-          <input type="text" {...bindTripTitle} />
+          <input {...register('title')} />
           <Button style={{ minWidth: 200 }} type="submit">
             Create Trip
           </Button>
         </div>
 
-        <Checkbox label="Covid test was negative" {...bindCovidCheck} />
+        <Controller
+          render={({ field }) => (
+            <Checkbox label="Covid test was negative" {...field} />
+          )}
+          name="example_3"
+          value={false}
+          control={control}
+        />
       </form>
     </>
   );
