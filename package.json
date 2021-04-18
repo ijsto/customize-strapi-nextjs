@@ -31,6 +31,7 @@
     "next-with-apollo": "^5.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-hook-form": "^7.0.1",
     "styled-components": "^5.2.1"
   },
   "keywords": [
