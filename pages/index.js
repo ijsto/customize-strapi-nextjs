@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie';
 import { useQuery } from '@apollo/react-hooks';
 import { useEffect, useState } from 'react';
 
@@ -19,7 +20,7 @@ const App = () => {
   });
 
   useEffect(() => {
-    setToken(localStorage.getItem('jwt'));
+    setToken(Cookies.get('jwt'));
   }, []);
 
   if (error) return <p>Error: {JSON.stringify(error)}</p>;
