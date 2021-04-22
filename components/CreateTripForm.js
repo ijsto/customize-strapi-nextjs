@@ -6,7 +6,9 @@ import Button from './common/Button';
 import Checkbox from './dataEntry/Checkbox';
 
 const CreateTripForm = () => {
-  const { control, handleSubmit, register } = useForm();
+  const { control, handleSubmit, register } = useForm({
+    defaultValues: { isCovidFree: false },
+  });
   const [createTrip, { error }] = useMutation(CREATE_TRIP_M, {
     onError(err) {
       // eslint-disable-next-line no-console
@@ -42,10 +44,13 @@ const CreateTripForm = () => {
 
         <Controller
           render={({ field }) => (
-            <Checkbox label="Covid test was negative" {...field} />
+            <Checkbox
+              defaultChecked={false}
+              label="Covid test was negative"
+              {...field}
+            />
           )}
-          name="example_3"
-          value={false}
+          name="isCovidFree"
           control={control}
         />
       </form>
