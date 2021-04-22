@@ -4,14 +4,14 @@ const CREATE_TRIP_M = gql`
   mutation CREATE_TRIP_M(
     $title: String!
     $destination: String!
-    $isTravellerCovidFree: Boolean!
+    $isCovidFree: Boolean!
   ) {
     createTrip(
       input: {
         data: {
           title: $title
           destination: $destination
-          isTravellerCovidFree: $isTravellerCovidFree
+          isCovidFree: $isCovidFree
         }
       }
     ) {

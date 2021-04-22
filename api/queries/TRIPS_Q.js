@@ -9,7 +9,7 @@ const TRIPS_Q = gql`
         username
         email
       }
-      isTravellerCovidFree
+      isCovidFree
       title
     }
   }
